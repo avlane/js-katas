@@ -1,0 +1,13 @@
+{
+  "name": "js-katas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Small coding katas in plain Node.js",
+  "scripts": {
+    "test": "node test/run.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  }
+}
