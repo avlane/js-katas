@@ -20,6 +20,18 @@ test('fromRoman: subtractive pairs', () => {
   assert.strictEqual(fromRoman('MCMXCIV'), 1994);
 });
 
+test('toRoman: rejects out of range input', () => {
+  assert.throws(() => toRoman(0), RangeError);
+  assert.throws(() => toRoman(4000), RangeError);
+  assert.throws(() => toRoman(2.5), RangeError);
+});
+
+test('fromRoman: rejects non-canonical input', () => {
+  assert.throws(() => fromRoman('IIII'), SyntaxError);
+  assert.throws(() => fromRoman('ABC'), SyntaxError);
+  assert.throws(() => fromRoman(''), SyntaxError);
+});
+
 test('fromRoman: round trip for 1..2000', () => {
   for (let n = 1; n <= 2000; n++) {
     assert.strictEqual(fromRoman(toRoman(n)), n);

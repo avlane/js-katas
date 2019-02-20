@@ -7,6 +7,9 @@ const TABLE = [
 ];
 
 function toRoman(n) {
+  if (!Number.isInteger(n) || n < 1 || n > 3999) {
+    throw new RangeError('toRoman expects an integer from 1 to 3999');
+  }
   let out = '';
   for (const [value, symbol] of TABLE) {
     while (n >= value) {
@@ -25,6 +28,9 @@ function fromRoman(str) {
     const current = VALUES[str[i]];
     const next = VALUES[str[i + 1]] || 0;
     total += current < next ? -current : current;
+  }
+  if (!total || toRoman(total) !== str) {
+    throw new SyntaxError('not a valid Roman numeral: ' + str);
   }
   return total;
 }
