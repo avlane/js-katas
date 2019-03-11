@@ -2,7 +2,7 @@
 
 const assert = require('assert');
 const { test } = require('./harness');
-const { digitSum, digitalRoot, collatzSteps } = require('../src/numbers');
+const { digitSum, digitalRoot, collatzSteps, gcd, lcm } = require('../src/numbers');
 
 test('digitSum', () => {
   assert.strictEqual(digitSum(0), 0);
@@ -21,4 +21,16 @@ test('collatzSteps', () => {
   assert.strictEqual(collatzSteps(6), 8);
   assert.strictEqual(collatzSteps(27), 111);
   assert.throws(() => collatzSteps(0), RangeError);
+});
+test('gcd', () => {
+  assert.strictEqual(gcd(12, 18), 6);
+  assert.strictEqual(gcd(17, 5), 1);
+  assert.strictEqual(gcd(0, 9), 9);
+  assert.strictEqual(gcd(-12, 18), 6);
+});
+
+test('lcm', () => {
+  assert.strictEqual(lcm(4, 6), 12);
+  assert.strictEqual(lcm(0, 6), 0);
+  assert.strictEqual(lcm(7, 3), 21);
 });
