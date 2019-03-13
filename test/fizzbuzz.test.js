@@ -14,3 +14,8 @@ test('fizzbuzz: first fifteen', () => {
 test('fizzbuzz: zero gives an empty list', () => {
   assert.deepStrictEqual(fizzbuzz(0), []);
 });
+
+test('fizzbuzz: custom rules', () => {
+  const rules = [[2, 'Foo'], [3, 'Bar'], [7, 'Baz']];
+  assert.deepStrictEqual(fizzbuzz(7, rules), ['1', 'Foo', 'Bar', 'Foo', '5', 'FooBar', 'Baz']);
+});
