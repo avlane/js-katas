@@ -16,6 +16,14 @@ dependencies. I'm using this to get comfortable with modern JavaScript
 - sieve of Eratosthenes
 - balanced brackets
 - flatten
+- Caesar cipher
+- binary search
+- merge sort
+- word frequency
+- run-length encoding
+- digital root, Collatz, gcd and lcm
+- matrix transpose and rotation
+- bowling score
 
 Each kata is a module in `src/` with a matching `test/<name>.test.js`.
 
@@ -24,3 +32,7 @@ Each kata is a module in `src/` with a matching `test/<name>.test.js`.
     npm test
 
 or `node test/run.js`. Needs Node 10 or newer.
+
+There is no test framework: `test/harness.js` is a 30-line `test(name, fn)`
+helper and `test/run.js` loads every `*.test.js` file next to it. A failing
+test makes the process exit with a non-zero status.

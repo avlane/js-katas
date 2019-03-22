@@ -16,3 +16,7 @@ test('twoSum: duplicates', () => {
 test('twoSum: no answer gives null', () => {
   assert.strictEqual(twoSum([1, 2, 3], 10), null);
 });
+
+test('twoSum: negative numbers', () => {
+  assert.deepStrictEqual(twoSum([-3, 4, 3, 90], 0), [0, 2]);
+});
